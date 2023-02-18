@@ -1,24 +1,14 @@
-// Задание 6.
-// Дан массив. Проверить, одинаковые ли элементы в массиве и вывести результат true или false в консоль. Речь идёт не о двух рядом стоящих одинаковых элементах, а обо всех. Проверить, все ли элементы в массиве одинаковые.
+// Исправил ошибку
 
-let arrNew6 = [];
-
-for (let i = 0; i < 5; i++) {
-    function randomNumber(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  arrNew6.unshift(randomNumber(0,100))
-}
+let arrLast = [2, 2, 2, 3];
 
 function unique(arr) {
   return Array.from(new Set(arr));
 }
 
-let arrLast = unique(arrNew6);
+let arrNew6 = unique(arrLast);
 
-if (arrNew6.length == arrLast.length) {
+if (arrNew6.length == 1) {
   console.log('true')
 } else {
   console.log('false')

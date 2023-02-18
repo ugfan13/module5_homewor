@@ -1,28 +1,22 @@
-// Задание 7.
-// Дан массив. Нужно вывести в консоль количество чётных и нечётных элементов в массиве. Если в массиве есть нулевой элемент, то он учитывается и выводится отдельно. 
-// При выполнении задания необходимо учесть, что массив может содержать не только числа, но и, например, знаки, null и так далее.
+// Добавлено учёт число либо не число, и подсчёт нулей.
+let arrNew7 = [1, 2, 0, 6, 3, 8, "xbckj"];
+let numOdd = 0;
+let numEven = 0;
+let notANum = 0;
+let numZero = 0;
 
-let arrNew7 = [];
-
-for (let i = 0; i < 5; i++) {
-    function randomNumber(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  arrNew7.unshift(randomNumber(0,100))
-}
-
-console.log(arrNew7);
-let y = 0;
-let z = 0;
 for (let i = 0; i < arrNew7.length; i++) {
-  if (arrNew7[i] % 2 == 0) {
-    y++
-  } else {
-    z++
-  }  
-}
-
-console.log(`Количество четных ${y}, количество нечётных ${z}`)
+    if (arrNew7[i] === 0) {
+      numZero++;
+    } else {
+       if (arrNew7[i] % 2 == 0){
+        numOdd++;
+        } else if (arrNew7[i] % 2 == 1) {
+        numEven++;
+        } else {
+        notANum++;
+        }
+    }    
+  }
+console.log(`Количество четных ${numOdd}, количество нечётных ${numEven}, a нулей всего ${numZero}`)
 
